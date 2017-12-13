@@ -5,18 +5,18 @@
   
 
   
-  <title>hello | 我的博客</title>
+  <title>EventBus����ת��ʱ���޷��ɹ���ȡ���� | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天收获很大，首先是弄通了自己的个人博客，以前总是依赖到别人的服务器，现在自己可以偷偷笑了，不过笑过之后还有很多的眼泪等着自己去留流，满满两天的时间研究这个东东，不过很开心，毕竟在技术面前总是很多坑，只要自己不放弃总会可以普渡，同事感谢高志龙同事的帮助。愿大家也能很快能搭建自己的博客。">
+  <meta name="description" content="�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ� 1.    ���ȿ����ж�һ��  if (!EventBus.getDefault().isRegistered(this)) {     EventBus.getDefault().register(this); } 2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart �">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello">
-<meta property="og:url" content="http://yoursite.com/2017/12/05/开心的一天/index.html">
+<meta property="og:title" content="EventBus����ת��ʱ���޷��ɹ���ȡ����">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据-1/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="今天收获很大，首先是弄通了自己的个人博客，以前总是依赖到别人的服务器，现在自己可以偷偷笑了，不过笑过之后还有很多的眼泪等着自己去留流，满满两天的时间研究这个东东，不过很开心，毕竟在技术面前总是很多坑，只要自己不放弃总会可以普渡，同事感谢高志龙同事的帮助。愿大家也能很快能搭建自己的博客。">
-<meta property="og:updated_time" content="2017-12-05T08:22:14.987Z">
+<meta property="og:description" content="�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ� 1.    ���ȿ����ж�һ��  if (!EventBus.getDefault().isRegistered(this)) {     EventBus.getDefault().register(this); } 2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart �">
+<meta property="og:updated_time" content="2017-12-13T02:36:52.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello">
-<meta name="twitter:description" content="今天收获很大，首先是弄通了自己的个人博客，以前总是依赖到别人的服务器，现在自己可以偷偷笑了，不过笑过之后还有很多的眼泪等着自己去留流，满满两天的时间研究这个东东，不过很开心，毕竟在技术面前总是很多坑，只要自己不放弃总会可以普渡，同事感谢高志龙同事的帮助。愿大家也能很快能搭建自己的博客。">
+<meta name="twitter:title" content="EventBus����ת��ʱ���޷��ɹ���ȡ����">
+<meta name="twitter:description" content="�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ� 1.    ���ȿ����ж�һ��  if (!EventBus.getDefault().isRegistered(this)) {     EventBus.getDefault().register(this); } 2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart �">
   
     <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -67,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-开心的一天" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-EventBus在跳转的时候无法成功获取数据-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/05/开心的一天/" class="article-date">
-  <time datetime="2017-12-05T08:17:30.000Z" itemprop="datePublished">2017-12-05</time>
+    <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据-1/" class="article-date">
+  <time datetime="2017-12-13T02:25:05.000Z" itemprop="datePublished">2017-12-13</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hello
+      EventBus����ת��ʱ���޷��ɹ���ȡ����
     </h1>
   
 
@@ -89,12 +89,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  今天收获很大，首先是弄通了自己的个人博客，以前总是依赖到别人的服务器，现在自己可以偷偷笑了，不过笑过之后还有很多的眼泪等着自己去留<br>流，满满两天的时间研究这个东东，不过很开心，毕竟在技术面前总是很多坑，只要自己不放弃总会可以普渡，同事感谢高志龙同事的帮助。愿大家<br>也能很快能搭建自己的博客。</p>
+        <p>�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ�</p>
+<pre><code>1.    ���ȿ����ж�һ�� 
+if (!EventBus.getDefault().isRegistered(this)) {
+    EventBus.getDefault().register(this);
+</code></pre><p>}</p>
+<pre><code>2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart ���ʱ������쳣��Ŷ
+</code></pre><p>ȡ��ע�� Ҫд�� onDestroy �������Ҫд�� onStop ���ʱ������쳣��Ŷ</p>
+<pre><code>3.    ���������˶����¼��޷�ִ�е���������������Ƕ����¼��� Activity ��δִ�е�ԭ��
+</code></pre><p>�ҵ�ԭ��ͺð��ˣ���ʱ�����Ҫ�õ� postSticky��</p>
+<p>�����¼�ʱ�� postSticky ������</p>
+<p>EventBus.getDefault().postSticky(event);</p>
+<p>����ʱ����� sticky = true</p>
+<p>//���� <code>@Subscribe</code> Դ��֪�� <code>sticky</code> Ĭ���� `false<br>@Subscribe(sticky = true)<br>public void onEvent(Event e) {<br>    ���Լ���ҵ��<br>}</p>
+<pre><code>4. ע��ʱ��÷ŵ���������ʼ����󣬷�����ܻ����һЩ������ָ���쳣��
 
+EventBus.getDefault().register(this); 
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/开心的一天/" data-id="cjb4g5eqs00025kvad5xv1wmx" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据-1/" data-id="cjb4g5eps00005kva4pno7yg8" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -103,19 +118,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/12/06/跟老猫的谈话/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          跟老猫的谈话
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">EventBus����ת��ʱ���޷��ɹ���ȡ����?</div>
     </a>
   
 </nav>

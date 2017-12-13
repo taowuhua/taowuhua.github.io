@@ -5,18 +5,18 @@
   
 
   
-  <title>EventBus在跳转的时候无法成功获取数据  | 我的博客</title>
+  <title>EventBus����ת��ʱ���޷��ɹ���ȡ����? | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活点滴">
+  <meta name="description" content="�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ� 1.    ���ȿ����ж�һ��  if (!EventBus.getDefault().isRegistered(this)) {     EventBus.getDefault().register(this); } 2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart �">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EventBus在跳转的时候无法成功获取数据 ">
+<meta property="og:title" content="EventBus����ת��ʱ���޷��ɹ���ȡ����?">
 <meta property="og:url" content="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="记录生活点滴">
-<meta property="og:updated_time" content="2017-12-13T02:06:29.374Z">
+<meta property="og:description" content="�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ� 1.    ���ȿ����ж�һ��  if (!EventBus.getDefault().isRegistered(this)) {     EventBus.getDefault().register(this); } 2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart �">
+<meta property="og:updated_time" content="2017-12-13T02:36:23.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EventBus在跳转的时候无法成功获取数据 ">
-<meta name="twitter:description" content="记录生活点滴">
+<meta name="twitter:title" content="EventBus����ת��ʱ���޷��ɹ���ȡ����?">
+<meta name="twitter:description" content="�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ� 1.    ���ȿ����ж�һ��  if (!EventBus.getDefault().isRegistered(this)) {     EventBus.getDefault().register(this); } 2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart �">
   
     <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      EventBus在跳转的时候无法成功获取数据 
+      EventBus����ת��ʱ���޷��ɹ���ȡ����?
     </h1>
   
 
@@ -89,11 +89,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ�</p>
+<pre><code>1.    ���ȿ����ж�һ�� 
+if (!EventBus.getDefault().isRegistered(this)) {
+    EventBus.getDefault().register(this);
+</code></pre><p>}</p>
+<pre><code>2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart ���ʱ������쳣��Ŷ
+</code></pre><p>ȡ��ע�� Ҫд�� onDestroy �������Ҫд�� onStop ���ʱ������쳣��Ŷ</p>
+<pre><code>3.    ���������˶����¼��޷�ִ�е���������������Ƕ����¼��� Activity ��δִ�е�ԭ��
+</code></pre><p>�ҵ�ԭ��ͺð��ˣ���ʱ�����Ҫ�õ� postSticky��</p>
+<p>�����¼�ʱ�� postSticky ������</p>
+<p>EventBus.getDefault().postSticky(event);</p>
+<p>����ʱ����� sticky = true</p>
+<p>//���� <code>@Subscribe</code> Դ��֪�� <code>sticky</code> Ĭ���� `false<br>@Subscribe(sticky = true)<br>public void onEvent(Event e) {<br>    ���Լ���ҵ��<br>}</p>
+<pre><code>4. ע��ʱ��÷ŵ���������ʼ����󣬷�����ܻ����һЩ������ָ���쳣��
+
+EventBus.getDefault().register(this); 
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据/" data-id="cjb4fhcmf0000asva72wpcgl8" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据/" data-id="cjb4g5equ00035kvaeloqly7w" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -101,6 +117,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          EventBus����ת��ʱ���޷��ɹ���ȡ����
+        
+      </div>
+    </a>
   
   
     <a href="/2017/12/06/跟老猫的谈话/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,7 +167,11 @@
       <ul>
         
           <li>
-            <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/">EventBus在跳转的时候无法成功获取数据 </a>
+            <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据-1/">EventBus����ת��ʱ���޷��ɹ���ȡ����</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/">EventBus����ת��ʱ���޷��ɹ���ȡ����?</a>
           </li>
         
           <li>
