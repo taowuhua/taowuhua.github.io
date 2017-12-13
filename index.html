@@ -68,6 +68,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-EventBus在跳转的时候无法成功获取数据" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/" class="article-date">
+  <time datetime="2017-12-13T03:00:48.000Z" itemprop="datePublished">2017-12-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/">EventBus在跳转的时候无法成功获取数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.首先可以判断一下<br>if (!EventBus.getDefault().isRegistered(this)) {<br>    EventBus.getDefault().register(this);<br>}<br>2.取消注册 要写到 onDestroy 方法里，不要写到 onStop 里，有时会出现异常的哦<br>3.今天遇到了订阅事件无法执行的情况，分析后发现是订阅事件的 Activity 还未执行的原因。<br>找到原因就好办了，这时候就需要用到 postSticky。</p>
+<p>发布事件时用 postSticky 操作：</p>
+<p>1<br>EventBus.getDefault().postSticky(event);<br>订阅时，添加 sticky = true</p>
+<p>//看下 <code>@Subscribe</code> 源码知道 <code>sticky</code> 默认是 <code>false</code></p>
+<p>@Subscribe(sticky = true)    </p>
+<h2 id="public-void-onEvent-Event-e"><a href="#public-void-onEvent-Event-e" class="headerlink" title="public void onEvent(Event e) { "></a>public void onEvent(Event e) { </h2><p>}<br>4.EventBus.getDefault().register(this); 注册时最好放到各变量初始化最后，否则可能会出现一些变量空指针异常。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据/" data-id="cjb4gzqr500004ovawbxq8hpj" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-跟老猫的谈话" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/06/跟老猫的谈话/" class="article-date">
@@ -102,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/跟老猫的谈话/" data-id="cjb4g5eqw00045kvajsqm522e" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/06/跟老猫的谈话/" data-id="cjb4gzqri00034ovadrowicwj" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -139,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/开心的一天/" data-id="cjb4g5eqs00025kvad5xv1wmx" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/05/开心的一天/" data-id="cjb4gzqrg00024ovaetcdb7se" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -184,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/hello-world/" data-id="cjb4g5eqp00015kvauomqgsk2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/05/hello-world/" data-id="cjb4gzqrc00014ova9iegvvzj" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -223,6 +265,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/">EventBus在跳转的时候无法成功获取数据</a>
+          </li>
         
           <li>
             <a href="/2017/12/06/跟老猫的谈话/">跟老猫的谈话</a>
