@@ -120,58 +120,6 @@ EventBus.getDefault().register(this);
 
 
   
-    <article id="post-EventBus在跳转的时候无法成功获取数据" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/" class="article-date">
-  <time datetime="2017-12-13T02:06:29.000Z" itemprop="datePublished">2017-12-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/">EventBus����ת��ʱ���޷��ɹ���ȡ����?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>�Լ���ʹ�ùٷ���eventbus��ʱ�������ļ���ӡ�</p>
-<pre><code>1.    ���ȿ����ж�һ�� 
-if (!EventBus.getDefault().isRegistered(this)) {
-    EventBus.getDefault().register(this);
-</code></pre><p>}</p>
-<pre><code>2.    ע���ʱ�� Ҫд�� onCreat �������Ҫд�� onStart ���ʱ������쳣��Ŷ
-</code></pre><p>ȡ��ע�� Ҫд�� onDestroy �������Ҫд�� onStop ���ʱ������쳣��Ŷ</p>
-<pre><code>3.    ���������˶����¼��޷�ִ�е���������������Ƕ����¼��� Activity ��δִ�е�ԭ��
-</code></pre><p>�ҵ�ԭ��ͺð��ˣ���ʱ�����Ҫ�õ� postSticky��</p>
-<p>�����¼�ʱ�� postSticky ������</p>
-<p>EventBus.getDefault().postSticky(event);</p>
-<p>����ʱ����� sticky = true</p>
-<p>//���� <code>@Subscribe</code> Դ��֪�� <code>sticky</code> Ĭ���� `false<br>@Subscribe(sticky = true)<br>public void onEvent(Event e) {<br>    ���Լ���ҵ��<br>}</p>
-<pre><code>4. ע��ʱ��÷ŵ���������ʼ����󣬷�����ܻ����һЩ������ָ���쳣��
-
-EventBus.getDefault().register(this); 
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据/" data-id="cjb4g5equ00035kvaeloqly7w" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-跟老猫的谈话" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/06/跟老猫的谈话/" class="article-date">
@@ -330,10 +278,6 @@ EventBus.getDefault().register(this);
         
           <li>
             <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据-1/">EventBus����ת��ʱ���޷��ɹ���ȡ����</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/">EventBus����ת��ʱ���޷��ɹ���ȡ����?</a>
           </li>
         
           <li>
