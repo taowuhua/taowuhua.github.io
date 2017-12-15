@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -67,6 +67,48 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-webView加载https，然后拦截url出现的问题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/15/webView加载https，然后拦截url出现的问题总结/" class="article-date">
+  <time datetime="2017-12-15T07:25:34.000Z" itemprop="datePublished">2017-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/15/webView加载https，然后拦截url出现的问题总结/">webView加载https，然后拦截url出现的问题总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前公司对接h5的时候都是用的http，这次对接融360了换成https，首选考虑的就是证书问题，然后自己在onreceiveSserror这个方法里面设置了<br>handle.proceed,<br> public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {<br>                //    super.onReceivedSslError(view, handler, error);<br>//                if(error.getPrimaryError() == android.net.http.SslError.SSL_INVALID ){// 校验过程遇到了bug<br>//                    handler.proceed();<br>//                }else{<br>//                    handler.cancel();<br>//                }<br>                Log.i(TAG, “onReceivedSslError” + error);<br>            }</p>
+<p>其次设置webview<br> private void initSetings(WebView wv) {<br>        wv.getSettings().setJavaScriptEnabled(true);<br>        wv.getSettings().setDomStorageEnabled(true);<br>        wv.getSettings().setAllowFileAccess(true);<br>        wv.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);<br>        wv.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);<br>        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) {<br>            wv.getSettings().setMixedContentMode(<br>                    WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);<br>        }</p>
+<pre><code>}
+</code></pre><p>最后在这个方法里面<br>    @Override<br>            public boolean shouldOverrideUrlLoading(WebView view, String url) {<br>                if (url != null &amp;&amp; url.contains(returnUrl)) {<br>                    // 拦截后做处理<br>                    //   CLogUtil.showToast(getActivity(),”拦截成功”);<br>                    Log.i(“taowuhua”, “======h” + url);<br>                    financialFinish();<br>                    return false;<br>                } else<br>                    //    CLogUtil.showToast(getActivity(), “拦截失败”);<br>                    Log.i(“taowuhua”, “============hahah” + url);<br>                    view.loadUrl(url);<br>                return true;</p>
+<pre><code>}
+</code></pre><p> return true；好像代表是你本身处理了，webview就不管了，你要是返回false 网页还是会自动加载的 ，谨记</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/15/webView加载https，然后拦截url出现的问题总结/" data-id="cjb7lidhx00034wvam77gf096" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-EventBus在跳转的时候无法成功获取数据" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -100,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据/" data-id="cjb4gzqr500004ovawbxq8hpj" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2017/12/13/EventBus在跳转的时候无法成功获取数据/" data-id="cjb7lidhh00004wva0b7rxr3x" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -144,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/跟老猫的谈话/" data-id="cjb4gzqri00034ovadrowicwj" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2017/12/06/跟老猫的谈话/" data-id="cjb7lidhr00014wvahhg0ghxj" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -181,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/开心的一天/" data-id="cjb4gzqrg00024ovaetcdb7se" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2017/12/05/开心的一天/" data-id="cjb7lidhz00044wvakr7wiezc" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -226,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/hello-world/" data-id="cjb4gzqrc00014ova9iegvvzj" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2017/12/05/hello-world/" data-id="cjb7lidhu00024wva372s3n4u" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -252,7 +294,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -262,9 +304,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/12/15/webView加载https，然后拦截url出现的问题总结/">webView加载https，然后拦截url出现的问题总结</a>
+          </li>
         
           <li>
             <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/">EventBus在跳转的时候无法成功获取数据</a>
@@ -295,7 +341,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Taowuhua<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
