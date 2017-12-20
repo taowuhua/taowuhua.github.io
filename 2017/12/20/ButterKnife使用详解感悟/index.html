@@ -5,18 +5,18 @@
   
 
   
-  <title>跟老猫的谈话 | 我的博客</title>
+  <title> ButterKnife使用详解感悟 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天面试结束，通过面试者的状态我看到了自己的缩影，只是使用三方的开源框架，自己并不了解底层的实现，更没去进行封装。然后老猫给我进行了授渔，举个简单的例子 okhttp 李炜 2017/12/6 16:37:19你看原生用法16:38:24李炜 2017/12/6 16:38:24new个okhttpclient.builder.url.build.call(params).execute(ca">
+  <meta name="description" content="ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。项目地址-传送门。 导入ButterKnife至项目中 1.在工程project的build.gradle中导入butterknife插件这里写图片描述 buildscript {    repositories {        jcenter()    }">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跟老猫的谈话">
-<meta property="og:url" content="http://yoursite.com/2017/12/06/跟老猫的谈话/index.html">
+<meta property="og:title" content=" ButterKnife使用详解感悟">
+<meta property="og:url" content="http://yoursite.com/2017/12/20/ButterKnife使用详解感悟/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="今天面试结束，通过面试者的状态我看到了自己的缩影，只是使用三方的开源框架，自己并不了解底层的实现，更没去进行封装。然后老猫给我进行了授渔，举个简单的例子 okhttp 李炜 2017/12/6 16:37:19你看原生用法16:38:24李炜 2017/12/6 16:38:24new个okhttpclient.builder.url.build.call(params).execute(ca">
-<meta property="og:updated_time" content="2017-12-06T09:30:43.532Z">
+<meta property="og:description" content="ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。项目地址-传送门。 导入ButterKnife至项目中 1.在工程project的build.gradle中导入butterknife插件这里写图片描述 buildscript {    repositories {        jcenter()    }">
+<meta property="og:updated_time" content="2017-12-20T06:04:10.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跟老猫的谈话">
-<meta name="twitter:description" content="今天面试结束，通过面试者的状态我看到了自己的缩影，只是使用三方的开源框架，自己并不了解底层的实现，更没去进行封装。然后老猫给我进行了授渔，举个简单的例子 okhttp 李炜 2017/12/6 16:37:19你看原生用法16:38:24李炜 2017/12/6 16:38:24new个okhttpclient.builder.url.build.call(params).execute(ca">
+<meta name="twitter:title" content=" ButterKnife使用详解感悟">
+<meta name="twitter:description" content="ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。项目地址-传送门。 导入ButterKnife至项目中 1.在工程project的build.gradle中导入butterknife插件这里写图片描述 buildscript {    repositories {        jcenter()    }">
   
     <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -67,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-跟老猫的谈话" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ButterKnife使用详解感悟" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/06/跟老猫的谈话/" class="article-date">
-  <time datetime="2017-12-06T09:24:52.000Z" itemprop="datePublished">2017-12-06</time>
+    <a href="/2017/12/20/ButterKnife使用详解感悟/" class="article-date">
+  <time datetime="2017-12-20T03:44:24.000Z" itemprop="datePublished">2017-12-20</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      跟老猫的谈话
+       ButterKnife使用详解感悟
     </h1>
   
 
@@ -89,19 +89,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  今天面试结束，通过面试者的状态我看到了自己的缩影，只是使用三方的开源框架，自己并不了解底层的实现，更没去进行封装。<br>然后老猫给我进行了授渔，<br>举个简单的例子 okhttp</p>
-<p>李炜 2017/12/6 16:37:19<br>你看原生用法<br>16:38:24<br>李炜 2017/12/6 16:38:24<br>new个okhttpclient.builder.url.build.call(params).execute(callback)</p>
-<p>李炜 2017/12/6 16:38:57<br>很长 所以会考虑抽个工具类 单例的</p>
-<p>李炜 2017/12/6 16:39:26<br>httputil.post(params,callback);</p>
-<p>李炜 2017/12/6 16:39:38<br>提供这样的给业务层使用</p>
-<p>李炜 2017/12/6 16:40:18<br>callback报文都是固定格式 所以会在工具里把code各种情况处理后 只返回正常的结果或者异常的信息.<br>16:40:41<br>李炜 2017/12/6 16:40:41<br>一个简单的网络请求代码封装就可以了.</p>
-<p>李炜 2017/12/6 16:41:23<br>封装组件要低耦合(方便复用),易用(用着舒服)</p>
-<p>李炜 2017/12/6 16:41:35<br>封装其实是牺牲了灵活性的.<br>目测自己的好日子到头了，fighting！！！也预祝自己今晚上线愉快。</p>
+        <p>ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。<br>项目地址-传送门。</p>
+<p>导入ButterKnife至项目中</p>
+<p>1.在工程project的build.gradle中导入butterknife插件<br>这里写图片描述</p>
+<p>buildscript {<br>    repositories {<br>        jcenter()<br>    }<br>    dependencies {<br>        classpath ‘com.android.tools.build:gradle:2.3.0’<br>        //加入下面这段代码<br>        classpath ‘com.jakewharton:butterknife-gradle-plugin:8.5.1’<br>    }<br>}</p>
+<p>allprojects {<br>    repositories {<br>        jcenter()<br>    }<br>}</p>
+<p>2.在项目app的build.gradle中添加butterknife的插件，即是app中的builde.gradle<br>这里写图片描述</p>
+<p>apply plugin: ‘com.android.application’<br>//加入下面这段代码<br>apply plugin: ‘com.jakewharton.butterknife’</p>
+<p>3.在项目app的build.gradle中添加依赖，然后同步项目，即可下载butterknife库至项目中</p>
+<p>dependencies {<br>    compile fileTree(dir: ‘libs’, include: [‘*.jar’])</p>
+<pre><code>compile &apos;com.android.support:appcompat-v7:25.2.0&apos;
+
+//加入下面这两行代码
+compile &apos;com.jakewharton:butterknife:8.5.1&apos;
+annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.5.1&apos;
+</code></pre><p>}</p>
+<p>若不见效可以去setting —plugin—-下载butterKniffer</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/跟老猫的谈话/" data-id="cjbenm5zx0004d8vad1kyx4ym" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/20/ButterKnife使用详解感悟/" data-id="cjbenm5zk0000d8vajccua6ks" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -110,19 +118,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/12/13/EventBus在跳转的时候无法成功获取数据/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          EventBus在跳转的时候无法成功获取数据
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/05/开心的一天/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/12/15/webView加载https，然后拦截url出现的问题总结/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">hello</div>
+      <div class="article-nav-title">webView加载https，然后拦截url出现的问题总结</div>
     </a>
   
 </nav>
