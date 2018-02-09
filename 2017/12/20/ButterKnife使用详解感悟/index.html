@@ -7,16 +7,16 @@
   
   <title> ButterKnife使用详解感悟 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。项目地址-传送门。 导入ButterKnife至项目中 1.在工程project的build.gradle中导入butterknife插件这里写图片描述 buildscript {    repositories {        jcenter()    }">
+  <meta name="description" content="记录生活点滴">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" ButterKnife使用详解感悟">
 <meta property="og:url" content="http://yoursite.com/2017/12/20/ButterKnife使用详解感悟/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。项目地址-传送门。 导入ButterKnife至项目中 1.在工程project的build.gradle中导入butterknife插件这里写图片描述 buildscript {    repositories {        jcenter()    }">
-<meta property="og:updated_time" content="2017-12-20T06:04:10.512Z">
+<meta property="og:description" content="记录生活点滴">
+<meta property="og:updated_time" content="2017-12-20T06:26:48.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=" ButterKnife使用详解感悟">
-<meta name="twitter:description" content="ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。项目地址-传送门。 导入ButterKnife至项目中 1.在工程project的build.gradle中导入butterknife插件这里写图片描述 buildscript {    repositories {        jcenter()    }">
+<meta name="twitter:description" content="记录生活点滴">
   
     <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -89,27 +89,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ButterKnife是控件注入框架，可以帮助安卓开发者省去初始化控件的重复性工作，简单快捷地初始化布局文件中的控件，极大地提升开发效率。<br>项目地址-传送门。</p>
-<p>导入ButterKnife至项目中</p>
-<p>1.在工程project的build.gradle中导入butterknife插件<br>这里写图片描述</p>
-<p>buildscript {<br>    repositories {<br>        jcenter()<br>    }<br>    dependencies {<br>        classpath ‘com.android.tools.build:gradle:2.3.0’<br>        //加入下面这段代码<br>        classpath ‘com.jakewharton:butterknife-gradle-plugin:8.5.1’<br>    }<br>}</p>
-<p>allprojects {<br>    repositories {<br>        jcenter()<br>    }<br>}</p>
-<p>2.在项目app的build.gradle中添加butterknife的插件，即是app中的builde.gradle<br>这里写图片描述</p>
-<p>apply plugin: ‘com.android.application’<br>//加入下面这段代码<br>apply plugin: ‘com.jakewharton.butterknife’</p>
-<p>3.在项目app的build.gradle中添加依赖，然后同步项目，即可下载butterknife库至项目中</p>
-<p>dependencies {<br>    compile fileTree(dir: ‘libs’, include: [‘*.jar’])</p>
-<pre><code>compile &apos;com.android.support:appcompat-v7:25.2.0&apos;
-
-//加入下面这两行代码
-compile &apos;com.jakewharton:butterknife:8.5.1&apos;
-annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.5.1&apos;
-</code></pre><p>}</p>
-<p>若不见效可以去setting —plugin—-下载butterKniffer</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/20/ButterKnife使用详解感悟/" data-id="cjbenm5zk0000d8vajccua6ks" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/20/ButterKnife使用详解感悟/" data-id="cjbenm5zk0000d8vajccua6ks" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -120,7 +104,7 @@ annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.5.1&apos;
   
   
     <a href="/2017/12/15/webView加载https，然后拦截url出现的问题总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
+      <strong class="article-nav-caption">Viejo</strong>
       <div class="article-nav-title">webView加载https，然后拦截url出现的问题总结</div>
     </a>
   
@@ -143,7 +127,7 @@ annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.5.1&apos;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -153,7 +137,7 @@ annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.5.1&apos;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
@@ -189,8 +173,8 @@ annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.5.1&apos;
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 Taowuhua<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2018 Taowuhua<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
